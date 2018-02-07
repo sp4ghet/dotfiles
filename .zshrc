@@ -108,3 +108,17 @@ fi
 
 # pyenv init
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+#pipenv locale fix
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# export bin for aws-cli
+export PATH="$HOME/.local/bin:$PATH"
+
+# use colordiff
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff'
+else
+  alias diff='diff'
+fi

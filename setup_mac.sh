@@ -16,8 +16,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 npm install -g pure-prompt
 
 # Move respective dotfiles to their rightful places
-ln -s ./.vimrc ~/.vimrc
-ln -s ./.zshrc ~/.zshrc
+ln -s $(pwd)/.vimrc ~/.vimrc
+ln -s $(pwd)/.zshrc ~/.zshrc
 
 # Install atom packages
 apm install --packages-file atom-packages.txt
