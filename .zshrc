@@ -122,3 +122,6 @@ if [[ -x `which colordiff` ]]; then
 else
   alias diff='diff'
 fi
+
+# use diff-highlight for git
+export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight

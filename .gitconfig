@@ -1,0 +1,38 @@
+[user]
+	email = rikuo.hase1997@gmail.com
+	name = Rikuo Hasegawa
+
+[color "diff"]
+    # http://qiita.com/qurage/items/452f2debb64e2708a46c
+    meta = 242 238
+    frag = 239 236
+    old = 167 normal
+    new = 107 normal
+    context = 240
+    commit = 246 024
+
+[alias]
+    co = checkout
+    s = status
+    cm = commit -m
+    amend = commit --amend
+    a = add
+    l = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
+    
+[diff]
+    tool      = vimdiff
+    algorithm = histogram
+    compactionHeuristic = true
+
+[merge]
+    tool = vimdiff
+
+[github]
+	user = sp4ghet
+
+[pager]
+    log  = diff-highlight | less -RX
+    show = diff-highlight | less -RX
+    diff = diff-highlight | less -RX
+[core]
+	excludesfile = /Users/sp4ghet/.gitignore_global
