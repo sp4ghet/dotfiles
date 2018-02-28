@@ -125,3 +125,10 @@ fi
 
 # use diff-highlight for git
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+
+#Init rbenv
+eval "$(rbenv init -)"
+
+# enable gcloud 
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'

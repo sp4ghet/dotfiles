@@ -35,4 +35,4 @@
     show = diff-highlight | less -RX
     diff = diff-highlight | less -RX
 [core]
-	excludesfile = /Users/sp4ghet/.gitignore_global
+    excludesfile = /Users/sp4ghet/.gitignore
