@@ -132,3 +132,8 @@ eval "$(rbenv init -)"
 # enable gcloud 
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
+# Add GOPATH
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export GOROOT=`go env GOROOT`
