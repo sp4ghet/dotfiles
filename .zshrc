@@ -7,7 +7,7 @@ export ZSH=/Users/sp4ghet/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="avit"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -106,6 +106,8 @@ export NVM_DIR="$HOME/.nvm"
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
+
+alias tmux="tmux -2"
 
 # pyenv init
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
