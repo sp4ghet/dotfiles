@@ -7,7 +7,7 @@ export ZSH=/Users/sp4ghet/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=""
+ZSH_THEME="spaceship"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -72,11 +72,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -97,9 +97,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-fpath+=('/Users/sp4ghet/.nvm/versions/node/v9.5.0/lib/node_modules/pure-prompt/functions')
-autoload -U promptinit; promptinit
-prompt pure
+# Pure prompt
+# fpath+=('/Users/sp4ghet/.nvm/versions/node/v9.5.0/lib/node_modules/pure-prompt/functions')
+# autoload -U promptinit; promptinit
+# prompt pure
 
 # brew-file settings
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
@@ -129,7 +130,7 @@ export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 #Init rbenv
 eval "$(rbenv init -)"
 
-# enable gcloud 
+# enable gcloud
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
