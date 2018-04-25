@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/sp4ghet/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -102,9 +102,19 @@ export NVM_DIR="$HOME/.nvm"
 # autoload -U promptinit; promptinit
 # prompt pure
 
-# brew-file settings
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
+if [[ -f `which brew` ]];then
+    # brew-file settings
+    if [ -f $(brew --prefix)/etc/brew-wrap ];then
+        source $(brew --prefix)/etc/brew-wrap
+    fi
+    # export bin for aws-cli
+    export PATH="$HOME/.local/bin:$PATH"
+    #Init rbenv
+    eval "$(rbenv init -)"
+
+    # enable gcloud
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 fi
 
 alias tmux="tmux -2"
@@ -116,8 +126,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# export bin for aws-cli
-export PATH="$HOME/.local/bin:$PATH"
 
 # use colordiff
 if [[ -x `which colordiff` ]]; then
@@ -129,14 +137,9 @@ fi
 # use diff-highlight for git
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
-#Init rbenv
-eval "$(rbenv init -)"
-
-# enable gcloud
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
-# Add GOPATH
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export GOROOT=`go env GOROOT`
+if [[ -a `which go` ]]; then
+    # Add GOPATH
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOPATH/bin
+    export GOROOT=`go env GOROOT`
+fi
