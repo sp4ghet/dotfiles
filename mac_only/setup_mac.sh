@@ -29,5 +29,5 @@ brew file set_repo
 brew file install
 
 # Install atom packages
-apm install --packages-file atom-packages.txt
+apm install --packages-file ../common/atom-packages.txt
 
