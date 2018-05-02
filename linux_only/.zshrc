@@ -135,11 +135,24 @@ else
 fi
 
 # use diff-highlight for git
-export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+if [[ -d /usr/share/doc/git/contrib/diff-highlight ]];then
+    export PATH=$PATH:/usr/share/doc/git/contrib/diff-highlight
+fi
+if [[ -d /usr/local/share/git-core/contrib/diff-highlight ]]; then
+    export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+fi
 
 if [[ -a `which go` ]]; then
     # Add GOPATH
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
     export GOROOT=`go env GOROOT`
+fi
+
+# Use glslLangValidator
+if [[ -a ~/VulkanSDK ]]; then
+   export VULKAN_SDK="$HOME/VulkanSDK/latest/x86_64"
+   export PATH="$VULKAN_SDK/bin:$PATH"
+   export LD_LIBRARY_PATH="$VULKAN_SDK/lib:${LD_LIBRARY_PATH}:-}"
+   export VK_LAYER_PATH="$VULKAN_SDK/etc/explicit_layer.d"
 fi
