@@ -96,6 +96,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm use --delete-prefix default --silent
 
 # Pure prompt
 # fpath+=('/Users/sp4ghet/.nvm/versions/node/v9.5.0/lib/node_modules/pure-prompt/functions')
@@ -142,4 +143,8 @@ if [[ -a `which go` ]]; then
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
     export GOROOT=`go env GOROOT`
+fi
+
+if [[ -a `which cargo` ]]; then
+    export PATH=$PATH:$HOME/.cargo/bin
 fi
