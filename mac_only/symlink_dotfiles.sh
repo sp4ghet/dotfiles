@@ -15,4 +15,3 @@ remove_and_simlink .zshrc .zshrc
 remove_and_simlink .tmux.conf .tmux.conf
 remove_and_simlink .gitconfig ../common/.gitconfig
 remove_and_simlink .gitignore ../common/.gitignore
-

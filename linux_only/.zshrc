@@ -102,29 +102,15 @@ export NVM_DIR="$HOME/.nvm"
 # autoload -U promptinit; promptinit
 # prompt pure
 
-if [[ -f `which brew` ]];then
-    # brew-file settings
-    if [ -f $(brew --prefix)/etc/brew-wrap ];then
-        source $(brew --prefix)/etc/brew-wrap
-    fi
-    # export bin for aws-cli
-    export PATH="$HOME/.local/bin:$PATH"
-    #Init rbenv
-    eval "$(rbenv init -)"
-
-    # enable gcloud
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-fi
-
 alias tmux="tmux -2"
 
 # pyenv init
+export PATH="$HOME/.pyenv/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 #pipenv locale fix
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
 
 # use colordiff
@@ -135,11 +121,39 @@ else
 fi
 
 # use diff-highlight for git
-export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+if [[ -d /usr/share/doc/git/contrib/diff-highlight ]];then
+    export PATH=$PATH:/usr/share/doc/git/contrib/diff-highlight
+fi
+if [[ -d /usr/local/share/git-core/contrib/diff-highlight ]]; then
+    export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+fi
 
 if [[ -a `which go` ]]; then
     # Add GOPATH
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
     export GOROOT=`go env GOROOT`
+fi
+
+# Use glslLangValidator
+if [[ -a ~/VulkanSDK ]]; then
+   export VULKAN_SDK="$HOME/VulkanSDK/latest/x86_64"
+   export PATH="$VULKAN_SDK/bin:$PATH"
+   export LD_LIBRARY_PATH="$VULKAN_SDK/lib:${LD_LIBRARY_PATH}:-}"
+   export VK_LAYER_PATH="$VULKAN_SDK/etc/explicit_layer.d"
+fi
+
+# Setup OPAM
+if [[ -a $HOME/.opam ]]; then
+ . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/.local/share/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/.local/share/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/.local/share/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/.local/share/google-cloud-sdk/completion.zsh.inc"; fi
+
+if [ $commands[kubectl] ]; then
+      source <(kubectl completion zsh)
 fi
