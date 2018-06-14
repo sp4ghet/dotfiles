@@ -148,3 +148,5 @@ fi
 if [[ -a `which cargo` ]]; then
     export PATH=$PATH:$HOME/.cargo/bin
 fi
+
+eval "$(direnv hook zsh)"
