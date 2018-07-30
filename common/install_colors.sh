@@ -1,4 +1,4 @@
 #!/bin/bash
 
 mkdir -p ~/.vim/colors
-cp colors/* ~/.vim/colors
+ln -s $(pwd)/colors/* ~/.vim/colors/

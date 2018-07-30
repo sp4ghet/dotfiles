@@ -143,3 +143,7 @@ if [[ -a `which go` ]]; then
     export PATH=$PATH:$GOPATH/bin
     export GOROOT=`go env GOROOT`
 fi
+
+if [[ -a `which thefuck` ]]; then
+    eval $(thefuck --alias)
+fi
