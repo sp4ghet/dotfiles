@@ -154,3 +154,5 @@ if [[ -a `which cargo` ]]; then
 fi
 
 eval "$(direnv hook zsh)"
+
+[ -f $ZDOTDIR/.zshrc-peco ] && . $ZDOTDIR/.zshrc-peco
