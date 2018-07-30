@@ -2,7 +2,8 @@
 
 remove_and_simlink(){
     if [ -e ~/$1 ] || [ -h ~/$1 ]; then
-      rm ~/$1
+        echo "removing $1"
+        rm ~/$1
     fi
 
     ln -s $(pwd)/$2 ~/$1
