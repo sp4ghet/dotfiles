@@ -1,4 +1,3 @@
-#!/bin/zsh
 ## select-history
 function peco-select-history() {
   local tac

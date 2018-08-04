@@ -11,7 +11,7 @@ remove_and_simlink(){
 
 # Move respective dotfiles to their rightful places
 remove_and_simlink .vimrc ../common/.vimrc
-remove_and_simlink .zshrc .zsh/.zshrc
+remove_and_simlink .zshrc zsh/.zshrc
 remove_and_simlink .tmux.conf .tmux.conf
 remove_and_simlink .gitconfig ../common/.gitconfig
 remove_and_simlink .gitignore ../common/.gitignore
