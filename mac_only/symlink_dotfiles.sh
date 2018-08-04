@@ -11,7 +11,10 @@ remove_and_simlink(){
 
 # Move respective dotfiles to their rightful places
 remove_and_simlink .vimrc ../common/.vimrc
-remove_and_simlink .zshrc .zshrc
+remove_and_simlink .zshrc .zsh/.zshrc
 remove_and_simlink .tmux.conf .tmux.conf
 remove_and_simlink .gitconfig ../common/.gitconfig
 remove_and_simlink .gitignore ../common/.gitignore
+mkdir -p ~/.vim/colors
+remove_and_simlink .vim/colors/solarized.vim ../common/colors/solarized.vim
+remove_and_simlink .zshenv .zshenv

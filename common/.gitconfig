@@ -36,3 +36,5 @@
     diff = diff-highlight | less -RX
 [core]
     excludesfile = /Users/sp4ghet/.gitignore
+[ghq]
+	root = /Users/sp4ghet/local

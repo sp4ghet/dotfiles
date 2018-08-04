@@ -155,4 +155,6 @@ fi
 
 eval "$(direnv hook zsh)"
 
-[ -f $ZDOTDIR/.zshrc-peco ] && . $ZDOTDIR/.zshrc-peco
+if [[ -a $ZDOTDIR/.zshrc-peco ]]; then
+    source $ZDOTDIR/.zshrc-peco
+fi
