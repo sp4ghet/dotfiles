@@ -18,7 +18,7 @@
     amend = commit --amend
     a = add
     l = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
-    
+
 [diff]
     tool      = vimdiff
     algorithm = histogram
@@ -37,4 +37,4 @@
 [core]
     excludesfile = ~/.gitignore
 [ghq]
-    root = /Users/sp4ghet/local
+    root = ~/local

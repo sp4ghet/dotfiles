@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -8,13 +5,6 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="avit"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -65,12 +55,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -78,29 +62,12 @@ else
   export EDITOR='vim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# plugins, and themes.
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Pure prompt
-# fpath+=('/Users/sp4ghet/.nvm/versions/node/v9.5.0/lib/node_modules/pure-prompt/functions')
-# autoload -U promptinit; promptinit
-# prompt pure
 
 alias tmux="tmux -2"
 
@@ -111,7 +78,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 #pipenv locale fix
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
-
 
 # use colordiff
 if [[ -x `which colordiff` ]]; then
@@ -158,5 +124,14 @@ if [ $commands[kubectl] ]; then
       source <(kubectl completion zsh)
 fi
 
-alias docker-cleanse-images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
-eval "$(direnv hook zsh)"
+if [[ -a `which docker` ]]; then
+  alias docker-cleanse-images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+fi
+
+if [[ -a `which direnv` ]]; then
+  eval "$(direnv hook zsh)"
+fi
+
+if [[ -a $ZDOTDIR/.zshrc-peco ]]; then
+    source $ZDOTDIR/.zshrc-peco
+fi
