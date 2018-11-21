@@ -157,3 +157,6 @@ if [ -f "$HOME/.local/share/google-cloud-sdk/completion.zsh.inc" ]; then source 
 if [ $commands[kubectl] ]; then
       source <(kubectl completion zsh)
 fi
+
+alias docker-cleanse-images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+eval "$(direnv hook zsh)"

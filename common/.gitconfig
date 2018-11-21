@@ -28,13 +28,13 @@
     tool = vimdiff
 
 [github]
-	user = sp4ghet
+    user = sp4ghet
 
 [pager]
     log  = diff-highlight | less -RX
     show = diff-highlight | less -RX
     diff = diff-highlight | less -RX
 [core]
-    excludesfile = /Users/sp4ghet/.gitignore
+    excludesfile = ~/.gitignore
 [ghq]
-	root = /Users/sp4ghet/local
+    root = /Users/sp4ghet/local
