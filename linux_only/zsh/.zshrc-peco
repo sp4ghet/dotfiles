@@ -21,7 +21,7 @@ function peco-pushd() {
   zle reset-prompt
 }
 zle -N peco-pushd
-bindkey "^a" peco-pushd
+bindkey "^h" peco-pushd
 
 ## src
 function peco-src () {

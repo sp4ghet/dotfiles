@@ -75,6 +75,9 @@ alias tmux="tmux -2"
 export PATH="$HOME/.pyenv/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
+#cargo bin stuff
+export PATH="$HOME/.cargo/bin:$PATH"
+
 #pipenv locale fix
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
@@ -135,3 +138,4 @@ fi
 if [[ -a $ZDOTDIR/.zshrc-peco ]]; then
     source $ZDOTDIR/.zshrc-peco
 fi
+
