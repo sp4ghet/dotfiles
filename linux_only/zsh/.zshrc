@@ -139,3 +139,6 @@ if [[ -a $ZDOTDIR/.zshrc-peco ]]; then
     source $ZDOTDIR/.zshrc-peco
 fi
 
+if [[ -a ~/.helm/bin ]]; then
+    export PATH="$PATH:$HOME/.helm/bin"
+fi

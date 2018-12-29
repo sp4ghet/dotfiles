@@ -1,6 +1,6 @@
 [user]
 	email = rikuo.hase1997@gmail.com
-	name = Rikuo Hasegawa
+	name = sp4ghet
 
 [color "diff"]
     # http://qiita.com/qurage/items/452f2debb64e2708a46c
@@ -38,3 +38,5 @@
     excludesfile = ~/.gitignore
 [ghq]
     root = ~/local
+[url "git@github.com:"]
+	insteadOf = https://github.com/
