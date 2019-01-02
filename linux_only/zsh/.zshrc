@@ -142,3 +142,7 @@ fi
 if [[ -a ~/.helm/bin ]]; then
     export PATH="$PATH:$HOME/.helm/bin"
 fi
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[[ -f /home/sp4ghet/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . /home/sp4ghet/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
