@@ -19,3 +19,4 @@ remove_and_simlink .zshenv .zshenv
 remove_and_simlink .tmux.conf .tmux.conf
 remove_and_simlink .gitconfig ../common/.gitconfig
 remove_and_simlink .gitignore ../common/.gitignore
+remove_and_simlink .pythonstartup .pythonstartup
