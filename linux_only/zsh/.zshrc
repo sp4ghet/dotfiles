@@ -117,6 +117,11 @@ if [[ -a $HOME/.opam ]]; then
  . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
 
+if [[ -a `which rustup` ]]; then
+    export RUST_BACKTRACE=1
+    export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src
+fi
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/.local/share/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/.local/share/google-cloud-sdk/path.zsh.inc"; fi
 
