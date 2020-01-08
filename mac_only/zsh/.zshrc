@@ -127,7 +127,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-
 # use colordiff
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff'
@@ -158,3 +157,5 @@ eval "$(direnv hook zsh)"
 if [[ -a $ZDOTDIR/.zshrc-peco ]]; then
     source $ZDOTDIR/.zshrc-peco
 fi
+
+export PATH=/Users/sp4ghet/Library/Python/3.7/bin:$PATH
