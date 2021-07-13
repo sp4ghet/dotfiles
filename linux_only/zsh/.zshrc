@@ -159,3 +159,5 @@ if [[ -f /home/sp4ghet/.config/yarn/global/node_modules/tabtab/.completions/yarn
 fi
 
 export PYTHONSTARTUP=$HOME/.pythonstartup
+
+export PATH="/home/sp4ghet/.ebcli-virtual-env/executables:$PATH"

@@ -1,5 +1,5 @@
 [user]
-	email = 8775460+sp4ghet@users.noreply.github.com
+	email = 8775460+sp4ghet@users.noreply.github.com 
 	name = sp4ghet
 
 [color "diff"]
@@ -17,7 +17,7 @@
     cm = commit -m
     amend = commit --amend
     a = add
-    l = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
+    l = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn <%ae> %Creset%s' --date=short
 
 [diff]
     tool      = vimdiff
